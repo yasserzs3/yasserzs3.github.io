@@ -30,7 +30,7 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <section id="blog" className="section bg-white dark:bg-gray-800">
+    <section id="blog" className="section-alt">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ const Blog = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl font-bold mb-2">Blog</h2>
-          <div className="w-16 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-16 h-1 bg-purple-600 mx-auto"></div>
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Sharing thoughts and insights on AI, machine learning, and software development.
           </p>
@@ -68,7 +68,7 @@ const Blog = () => {
                 <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
                   <FaCalendarAlt className="mr-2" />
                   <span>{post.date}</span>
-                  <span className="ml-4 px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">
+                  <span className="ml-4 px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">
                     {post.category}
                   </span>
                 </div>
@@ -78,7 +78,7 @@ const Blog = () => {
                 
                 <a 
                   href="#" 
-                  className="inline-flex items-center font-medium text-blue-600 dark:text-blue-400 hover:underline mt-auto"
+                  className="inline-flex items-center font-medium text-purple-600 dark:text-purple-400 hover:underline mt-auto"
                 >
                   <span>Read more</span>
                   <FaArrowRight className="ml-2 text-sm" />

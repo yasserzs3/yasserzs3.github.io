@@ -3,11 +3,11 @@ import { FaArrowDown } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center bg-white dark:bg-gray-900 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-30 animate-blob"></div>
-      <div className="absolute top-40 right-20 w-64 h-64 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-pink-300 dark:bg-pink-900 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 dark:bg-purple-800 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-50 animate-blob"></div>
+      <div className="absolute top-40 right-20 w-72 h-72 bg-violet-300 dark:bg-violet-800 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-fuchsia-300 dark:bg-fuchsia-800 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
       
       <div className="container mx-auto px-4 z-10">
         <motion.div 
@@ -22,7 +22,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-blue-600 dark:text-blue-400">John Doe</span>
+            <span className="text-purple-600 dark:text-purple-400">Yaser Shoshaa</span>
           </motion.h1>
           
           <motion.h2 

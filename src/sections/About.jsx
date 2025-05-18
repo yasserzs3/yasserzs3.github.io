@@ -3,19 +3,19 @@ import { FaPython, FaReact, FaGitAlt, FaDocker } from 'react-icons/fa';
 import { SiPytorch, SiTensorflow, SiFastapi, SiLangchain } from 'react-icons/si';
 
 const skills = [
-  { name: 'PyTorch', icon: <SiPytorch />, color: 'text-orange-500' },
-  { name: 'TensorFlow', icon: <SiTensorflow />, color: 'text-blue-500' },
-  { name: 'Python', icon: <FaPython />, color: 'text-green-500' },
-  { name: 'FastAPI', icon: <SiFastapi />, color: 'text-teal-500' },
+  { name: 'PyTorch', icon: <SiPytorch />, color: 'text-purple-500' },
+  { name: 'TensorFlow', icon: <SiTensorflow />, color: 'text-purple-600' },
+  { name: 'Python', icon: <FaPython />, color: 'text-purple-700' },
+  { name: 'FastAPI', icon: <SiFastapi />, color: 'text-purple-800' },
   { name: 'LangChain', icon: <SiLangchain />, color: 'text-purple-500' },
-  { name: 'React', icon: <FaReact />, color: 'text-blue-400' },
-  { name: 'Git', icon: <FaGitAlt />, color: 'text-red-500' },
-  { name: 'Docker', icon: <FaDocker />, color: 'text-blue-600' }
+  { name: 'React', icon: <FaReact />, color: 'text-purple-600' },
+  { name: 'Git', icon: <FaGitAlt />, color: 'text-purple-700' },
+  { name: 'Docker', icon: <FaDocker />, color: 'text-purple-800' }
 ];
 
 const About = () => {
   return (
-    <section id="about" className="section bg-white dark:bg-gray-800">
+    <section id="about" className="section-alt">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ const About = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl font-bold mb-2">About Me</h2>
-          <div className="w-16 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-16 h-1 bg-purple-600 mx-auto"></div>
         </motion.div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -35,7 +35,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-4">AI Developer & ML Engineer</h3>
+            <h3 className="text-2xl font-bold mb-4">AI Engineer</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
               With over 5 years of experience in machine learning and artificial intelligence, I specialize in developing
               intelligent systems that solve real-world problems. My expertise lies in natural language processing, 
