@@ -1,0 +1,58 @@
+const projects = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce application with payment integration and admin dashboard.",
+    image: "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=E-Commerce+Project",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    githubLink: "https://github.com/username/e-commerce",
+    demoLink: "https://e-commerce-demo.example.com",
+  },
+  {
+    id: 2,
+    title: "Task Management App",
+    description: "A task management application with drag and drop functionality and team collaboration features.",
+    image: "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Task+Management+App",
+    technologies: ["React", "Redux", "Firebase", "Tailwind CSS"],
+    githubLink: "https://github.com/username/task-manager",
+    demoLink: "https://task-manager-demo.example.com",
+  },
+  {
+    id: 3,
+    title: "Weather Dashboard",
+    description: "A weather dashboard that uses geolocation and displays forecasts with interactive charts.",
+    image: "https://via.placeholder.com/800x600/6366F1/FFFFFF?text=Weather+Dashboard",
+    technologies: ["React", "OpenWeather API", "Chart.js", "Tailwind CSS"],
+    githubLink: "https://github.com/username/weather-dashboard",
+    demoLink: "https://weather-dashboard-demo.example.com",
+  },
+  {
+    id: 4,
+    title: "Social Media App",
+    description: "A social media platform with real-time messaging, post sharing, and user profiles.",
+    image: "https://via.placeholder.com/800x600/EC4899/FFFFFF?text=Social+Media+App",
+    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
+    githubLink: "https://github.com/username/social-media",
+    demoLink: "https://social-media-demo.example.com",
+  },
+  {
+    id: 5,
+    title: "Recipe Finder",
+    description: "A recipe finder app that allows users to search for recipes based on ingredients they have.",
+    image: "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Recipe+Finder",
+    technologies: ["React", "Spoonacular API", "Tailwind CSS"],
+    githubLink: "https://github.com/username/recipe-finder",
+    demoLink: "https://recipe-finder-demo.example.com",
+  },
+  {
+    id: 6,
+    title: "Movie Database",
+    description: "A movie database application with search, filtering, and user reviews.",
+    image: "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Movie+Database",
+    technologies: ["React", "TMDb API", "Firebase", "Tailwind CSS"],
+    githubLink: "https://github.com/username/movie-database",
+    demoLink: "https://movie-database-demo.example.com",
+  },
+];
+
+export default projects; 
