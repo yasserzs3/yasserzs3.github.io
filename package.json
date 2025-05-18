@@ -10,7 +10,7 @@
   "lint": "eslint .",
   "preview": "vite preview",
   "predeploy": "npm run build",
-  "deploy": "gh-pages --branch main --directory dist"
+  "deploy": "gh-pages --branch main --dist dist"
 },
   "dependencies": {
     "framer-motion": "^12.12.1",
