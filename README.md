@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# AI Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website for AI developers and machine learning engineers. Built with React, Tailwind CSS, and Framer Motion, it features smooth animations and a clean design.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- Responsive design that works on all devices
+- Dark/light mode toggle with system preference detection
+- Smooth scroll and reveal animations
+- Modern and clean UI with Tailwind CSS
+- Component-based architecture for easy customization
+- GitHub Pages deployment ready
 
-### `npm start`
+## 📷 Sections
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Hero**: Professional introduction with animated elements
+- **About**: Background information and skills showcase
+- **Projects**: Portfolio of work with descriptions and links
+- **Blog**: Blog posts section with featured articles
+- **Contact**: Form and contact information
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- React 19
+- Tailwind CSS 4
+- Framer Motion
+- React Router Dom
+- React Icons
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📝 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v16.0.0 or later)
+- npm (v7.0.0 or later)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/ai-dev-portfolio.git
+cd ai-dev-portfolio
+```
 
-### `npm run eject`
+2. Install dependencies
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server
+```bash
+npm run dev
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open your browser and visit [http://localhost:5173](http://localhost:5173)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Deployment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This portfolio is configured for GitHub Pages deployment.
 
-## Learn More
+1. Update the `homepage` field in `package.json` with your GitHub username:
+```json
+"homepage": "https://yourusername.github.io/ai-dev-portfolio"
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Deploy to GitHub Pages
+```bash
+npm run deploy
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ✏️ Customization
 
-### Code Splitting
+- Edit personal information in each component
+- Modify the color scheme in the Tailwind config
+- Add or remove sections as needed
+- Update project details in the Projects component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📄 License
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
