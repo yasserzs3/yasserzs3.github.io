@@ -3,7 +3,7 @@ import { FaArrowDown } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center bg-white dark:bg-gray-900 relative overflow-hidden -mt-16 pt-16">
       {/* Background Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 dark:bg-purple-800 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-50 animate-blob"></div>
       <div className="absolute top-40 right-20 w-72 h-72 bg-violet-300 dark:bg-violet-800 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>

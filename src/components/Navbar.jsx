@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 bg-white dark:bg-gray-900 shadow-md z-50">
+    <nav className="sticky top-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="#" className="text-xl font-bold text-purple-600 dark:text-purple-400">
           Yaser Shoshaa

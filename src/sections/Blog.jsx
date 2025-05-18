@@ -30,7 +30,7 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <section id="blog" className="section-alt">
+    <section id="blog" className="pb-16 md:pb-24 pt-8 md:pt-12 bg-purple-50 dark:bg-gray-800">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

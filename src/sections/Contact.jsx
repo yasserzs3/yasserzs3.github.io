@@ -33,7 +33,7 @@ const Contact = () => {
   };
   
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="pb-16 md:pb-24 pt-8 md:pt-12 bg-white dark:bg-gray-900">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

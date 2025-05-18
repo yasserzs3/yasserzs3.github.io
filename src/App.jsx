@@ -76,7 +76,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main className="bg-white dark:bg-gray-900">
+      <main>
         <Hero />
         <About />
         <Projects />

@@ -60,7 +60,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="pb-16 md:pb-24 pt-8 md:pt-12 bg-white dark:bg-gray-900">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
