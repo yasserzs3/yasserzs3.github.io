@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaCalendarAlt, FaPaperPlane } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -33,67 +33,119 @@ const Contact = () => {
   };
   
   return (
-    <section id="contact" className="pb-16 md:pb-24 pt-8 md:pt-12 bg-white dark:bg-gray-900">
+    <section id="contact" className="pb-16 md:pb-24 pt-8 md:pt-12 bg-gradient-to-br from-white to-cyan-50 dark:from-gray-900 dark:to-slate-900">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
+          className="mb-16 text-center"
         >
-          <h2 className="text-3xl font-bold mb-2">Get In Touch</h2>
-          <div className="w-16 h-1 bg-purple-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Have a project in mind or just want to chat about AI and machine learning? Feel free to reach out.
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent dark:from-teal-400 dark:to-emerald-400">
+            Let's Connect
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-600 to-emerald-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            Ready to bring your AI vision to life? Whether you're looking for a technical partner, want to discuss 
+            innovative solutions, or just chat about the latest in machine learning, I'd love to connect.
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="space-y-8"
           >
-            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full text-purple-600 dark:text-purple-400 mr-4">
-                  <FaEnvelope />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Email</h4>
-                  <a href="mailto:yasserzs3@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                    yasserzs3@gmail.com
-                  </a>
-                </div>
-              </div>
+            <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 dark:border-gray-700/20">
+              <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+                🤝 Let's Collaborate
+              </h3>
               
-              <div className="flex items-start">
-                <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full text-purple-600 dark:text-purple-400 mr-4">
-                  <FaPhoneAlt />
+              <div className="space-y-6">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-xl flex items-center justify-center text-white mr-4 shadow-lg">
+                    <FaEnvelope className="text-lg" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">Email</h4>
+                    <a href="mailto:yasserzs3@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+                      yasserzs3@gmail.com
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Phone</h4>
-                  <a href="tel:+11234567890" className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                    +1 (123) 456-7890
-                  </a>
+                
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center text-white mr-4 shadow-lg">
+                    <FaCalendarAlt className="text-lg" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">Schedule a Call</h4>
+                    <a href="https://calendly.com/yasserzs3" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+                      Book a 30-min consultation
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center text-white mr-4 shadow-lg">
+                    <FaMapMarkerAlt className="text-lg" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">Location</h4>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      San Francisco Bay Area, CA
+                    </p>
+                    <p className="text-sm text-gray-500 dark:text-gray-500">
+                      Available for remote work globally
+                    </p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex items-start">
-                <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full text-purple-600 dark:text-purple-400 mr-4">
-                  <FaMapMarkerAlt />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Location</h4>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    San Francisco, California, USA
-                  </p>
-                </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 dark:border-gray-700/20">
+              <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+                🌐 Connect with me
+              </h3>
+              <div className="flex space-x-4">
+                <a 
+                  href="https://linkedin.com/in/yasserzs3" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-teal-600 hover:bg-teal-700 rounded-xl flex items-center justify-center text-white transition-all duration-200 transform hover:scale-105 shadow-lg"
+                >
+                  <FaLinkedin className="text-lg" />
+                </a>
+                <a 
+                  href="https://github.com/yasserzs3" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-xl flex items-center justify-center text-white transition-all duration-200 transform hover:scale-105 shadow-lg"
+                >
+                  <FaGithub className="text-lg" />
+                </a>
+                <a 
+                  href="https://twitter.com/yasserzs3" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-cyan-500 hover:bg-cyan-600 rounded-xl flex items-center justify-center text-white transition-all duration-200 transform hover:scale-105 shadow-lg"
+                >
+                  <FaTwitter className="text-lg" />
+                </a>
               </div>
+            </div>
+
+            {/* Response Time */}
+            <div className="bg-gradient-to-r from-teal-500 to-emerald-600 rounded-2xl p-6 text-white">
+              <h3 className="text-lg font-bold mb-2">⚡ Quick Response</h3>
+              <p className="text-teal-100">
+                I typically respond to emails within 24 hours. For urgent matters, feel free to reach out via LinkedIn.
+              </p>
             </div>
           </motion.div>
           
@@ -103,95 +155,134 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-6">Send A Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-                />
-              </div>
+            <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 dark:border-gray-700/20">
+              <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+                💬 Send a Message
+              </h3>
               
-              <div>
-                <label htmlFor="email" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-                ></textarea>
-              </div>
-              
-              <div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn btn-primary px-6 py-3 flex items-center space-x-2"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <span>Send Message</span>
-                  )}
-                </button>
-              </div>
-              
-              {submitStatus === 'success' && (
-                <div className="text-green-600 dark:text-green-400 p-3 bg-green-100 dark:bg-green-900 rounded-md">
-                  Your message has been sent successfully!
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block mb-2 font-medium text-gray-700 dark:text-gray-300">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 backdrop-blur-sm transition-all duration-200"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block mb-2 font-medium text-gray-700 dark:text-gray-300">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 backdrop-blur-sm transition-all duration-200"
+                      placeholder="your@email.com"
+                    />
+                  </div>
                 </div>
-              )}
-            </form>
+                
+                <div>
+                  <label htmlFor="subject" className="block mb-2 font-medium text-gray-700 dark:text-gray-300">
+                    Project Type
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 backdrop-blur-sm transition-all duration-200"
+                  >
+                    <option value="">Select project type</option>
+                    <option value="AI/ML Development">AI/ML Development</option>
+                    <option value="Full-Stack Application">Full-Stack Application</option>
+                    <option value="Data Engineering">Data Engineering</option>
+                    <option value="Technical Consultation">Technical Consultation</option>
+                    <option value="Partnership Opportunity">Partnership Opportunity</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block mb-2 font-medium text-gray-700 dark:text-gray-300">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="5"
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 backdrop-blur-sm transition-all duration-200 resize-none"
+                    placeholder="Tell me about your project or idea..."
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full px-8 py-4 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 disabled:from-gray-400 disabled:to-gray-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:transform-none transition-all duration-200 font-medium flex items-center justify-center space-x-2"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Sending Message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <FaPaperPlane className="text-lg" />
+                        <span>Send Message</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+                
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-green-600 dark:text-green-400 p-4 bg-green-100/80 dark:bg-green-900/30 rounded-xl border border-green-200 dark:border-green-800 backdrop-blur-sm"
+                  >
+                    ✅ Message sent successfully! I'll get back to you within 24 hours.
+                  </motion.div>
+                )}
+              </form>
+            </div>
+            
+            {/* Additional CTA */}
+            <div className="mt-8 text-center">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Prefer a quick chat? Let's connect directly:
+              </p>
+              <a 
+                href="https://calendly.com/yasserzs3" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-white dark:hover:bg-gray-800 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 font-medium text-gray-700 dark:text-gray-300"
+              >
+                <FaCalendarAlt />
+                <span>Schedule a Call</span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>

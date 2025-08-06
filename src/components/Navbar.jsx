@@ -38,34 +38,56 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm z-50">
+    <nav className="sticky top-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200/20 dark:border-gray-700/20 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="#" className="text-xl font-bold text-purple-600 dark:text-purple-400">
-          Yaser Shoshaa
+        <a href="#" className="flex items-center space-x-2 group">
+          <div className="w-10 h-10 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
+            <span className="text-white font-bold text-lg">Y</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-lg font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent dark:from-teal-400 dark:to-emerald-400">
+              Yaser Shoshaa
+            </span>
+            <span className="text-xs text-gray-500 dark:text-gray-400 -mt-1">
+              AI Engineer
+            </span>
+          </div>
         </a>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          <a href="#home" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Home</a>
-          <a href="#about" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">About</a>
-          <a href="#projects" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Projects</a>
-          <a href="#blog" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Blog</a>
-          <a href="#contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Contact</a>
+        <div className="hidden md:flex items-center space-x-1">
+          <a href="#home" className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium">
+            Home
+          </a>
+          <a href="#about" className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium">
+            About
+          </a>
+          <a href="#projects" className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium">
+            Projects
+          </a>
+          <a href="#blog" className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium">
+            Blog
+          </a>
+          <a href="#contact" className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium">
+            Contact
+          </a>
+          
+          <div className="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-4"></div>
           
           <button 
             onClick={toggleDarkMode}
-            className="p-2 rounded-full bg-purple-100 dark:bg-gray-700 text-purple-700 dark:text-purple-300"
+            className="p-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-teal-100 dark:hover:bg-teal-900/20 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-200 transform hover:scale-105"
             aria-label="Toggle dark mode"
           >
-            {isDarkMode ? <FaSun /> : <FaMoon />}
+            {isDarkMode ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
           </button>
         </div>
         
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center space-x-2">
           <button 
             onClick={toggleDarkMode}
-            className="p-2 mr-4 rounded-full bg-purple-100 dark:bg-gray-700 text-purple-700 dark:text-purple-300"
+            className="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-teal-100 dark:hover:bg-teal-900/20 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-200"
             aria-label="Toggle dark mode"
           >
             {isDarkMode ? <FaSun /> : <FaMoon />}
@@ -73,7 +95,7 @@ const Navbar = () => {
           
           <button 
             onClick={toggleMenu}
-            className="p-2 text-gray-600 dark:text-gray-300"
+            className="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-teal-100 dark:hover:bg-teal-900/20 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-200"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <FaTimes /> : <FaBars />}
@@ -83,13 +105,43 @@ const Navbar = () => {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a href="#home" onClick={toggleMenu} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Home</a>
-            <a href="#about" onClick={toggleMenu} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">About</a>
-            <a href="#projects" onClick={toggleMenu} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Projects</a>
-            <a href="#blog" onClick={toggleMenu} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Blog</a>
-            <a href="#contact" onClick={toggleMenu} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Contact</a>
+        <div className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200/20 dark:border-gray-700/20 shadow-lg">
+          <div className="container mx-auto px-4 py-6 flex flex-col space-y-3">
+            <a 
+              href="#home" 
+              onClick={toggleMenu} 
+              className="px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium"
+            >
+              Home
+            </a>
+            <a 
+              href="#about" 
+              onClick={toggleMenu} 
+              className="px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium"
+            >
+              About
+            </a>
+            <a 
+              href="#projects" 
+              onClick={toggleMenu} 
+              className="px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium"
+            >
+              Projects
+            </a>
+            <a 
+              href="#blog" 
+              onClick={toggleMenu} 
+              className="px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium"
+            >
+              Blog
+            </a>
+            <a 
+              href="#contact" 
+              onClick={toggleMenu} 
+              className="px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 font-medium"
+            >
+              Contact
+            </a>
           </div>
         </div>
       )}

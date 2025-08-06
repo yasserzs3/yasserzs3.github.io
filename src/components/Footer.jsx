@@ -1,62 +1,157 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaHeart, FaCode, FaRocket } from 'react-icons/fa';
+import { SiReact, SiTailwindcss, SiVercel } from 'react-icons/si';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
+  const socialLinks = [
+    {
+      href: "https://github.com/yasserzs3",
+      icon: <FaGithub className="text-xl" />,
+      label: "GitHub",
+      hoverColor: "hover:text-gray-800 dark:hover:text-white"
+    },
+    {
+      href: "https://linkedin.com/in/yasserzs3",
+      icon: <FaLinkedin className="text-xl" />,
+      label: "LinkedIn",
+      hoverColor: "hover:text-teal-600"
+    },
+    {
+      href: "https://twitter.com/yasserzs3",
+      icon: <FaTwitter className="text-xl" />,
+      label: "Twitter",
+      hoverColor: "hover:text-cyan-500"
+    },
+    {
+      href: "mailto:yasserzs3@gmail.com",
+      icon: <FaEnvelope className="text-xl" />,
+      label: "Email",
+      hoverColor: "hover:text-red-500"
+    }
+  ];
+
+  const quickLinks = [
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#blog", label: "Blog" },
+    { href: "#contact", label: "Contact" }
+  ];
+  
   return (
-    <footer className="bg-purple-50 dark:bg-gray-800 py-12">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h2 className="text-xl font-bold text-purple-600 dark:text-purple-400">Yaser Shoshaa</h2>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              AI Engineer & Machine Learning Engineer
+    <footer className="bg-gradient-to-br from-gray-50 to-teal-50 dark:from-gray-900 dark:to-slate-900 border-t border-gray-200/20 dark:border-gray-700/20">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          {/* Brand Section */}
+          <div className="md:col-span-2">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-xl">Y</span>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent dark:from-teal-400 dark:to-emerald-400">
+                  Yaser Shoshaa
+                </h2>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  AI Engineer & Full-Stack Developer
+                </p>
+              </div>
+            </div>
+            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md leading-relaxed">
+              Building intelligent systems that bridge the gap between cutting-edge AI research and real-world applications. 
+              Passionate about creating scalable solutions that make a meaningful impact.
             </p>
+            <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-500">
+              <FaRocket className="text-emerald-500" />
+              <span>Available for new opportunities</span>
+            </div>
           </div>
           
-          <div className="flex space-x-6">
-            <a 
-              href="https://github.com/yasserzs3" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-              aria-label="GitHub"
-            >
-              <FaGithub className="text-xl" />
-            </a>
-            <a 
-              href="https://linkedin.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin className="text-xl" />
-            </a>
-            <a 
-              href="https://twitter.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-              aria-label="Twitter"
-            >
-              <FaTwitter className="text-xl" />
-            </a>
-            <a 
-              href="mailto:yasserzs3@gmail.com" 
-              className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-              aria-label="Email"
-            >
-              <FaEnvelope className="text-xl" />
-            </a>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <a 
+                    href={link.href}
+                    className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Connect */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+              Let's Connect
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((social) => (
+                <a 
+                  key={social.label}
+                  href={social.href}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`w-10 h-10 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-400 ${social.hoverColor} border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transform hover:scale-110 transition-all duration-200`}
+                  aria-label={social.label}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+            <div className="mt-6">
+              <a 
+                href="mailto:yasserzs3@gmail.com"
+                className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm font-medium"
+              >
+                <FaEnvelope />
+                <span>Get in Touch</span>
+              </a>
+            </div>
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-600 dark:text-gray-400 text-sm">
-          <p>&copy; {currentYear} Yaser Shoshaa. All rights reserved.</p>
-          <p className="mt-2">
-            Built with React & Tailwind CSS
-          </p>
+        <div className="border-t border-gray-200/50 dark:border-gray-700/50 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-gray-600 dark:text-gray-400 text-sm">
+              <p>&copy; {currentYear} Yaser Shoshaa. All rights reserved.</p>
+            </div>
+            
+            <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-500">
+              <div className="flex items-center space-x-2">
+                <span>Built with</span>
+                <FaHeart className="text-red-500 text-xs" />
+                <span>using</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-1">
+                  <SiReact className="text-cyan-500" />
+                  <span>React</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <SiTailwindcss className="text-teal-500" />
+                  <span>Tailwind</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <SiVercel className="text-gray-800 dark:text-white" />
+                  <span>Vercel</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-4 text-center">
+            <p className="text-xs text-gray-500 dark:text-gray-500 flex items-center justify-center space-x-1">
+              <FaCode className="text-teal-500" />
+              <span>Designed & developed with passion for innovation</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
