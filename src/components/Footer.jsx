@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaHeart, FaCode, FaRocket } from 'react-icons/fa';
-import { SiReact, SiTailwindcss, SiVercel } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaCode, FaRocket } from 'react-icons/fa';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,19 +12,19 @@ const Footer = () => {
       hoverColor: "hover:text-gray-800 dark:hover:text-white"
     },
     {
-      href: "https://linkedin.com/in/yasserzs3",
+      href: "https://linkedin.com/in/yaserzk/",
       icon: <FaLinkedin className="text-xl" />,
       label: "LinkedIn",
       hoverColor: "hover:text-teal-600"
     },
     {
-      href: "https://twitter.com/yasserzs3",
-      icon: <FaTwitter className="text-xl" />,
-      label: "Twitter",
-      hoverColor: "hover:text-cyan-500"
+      href: "https://instagram.com/yasser.zs3",
+      icon: <FaInstagram className="text-xl" />,
+      label: "Instagram",
+      hoverColor: "hover:text-pink-500"
     },
     {
-      href: "mailto:yasserzs3@gmail.com",
+      href: "mailto:yasserzaher03@gmail.com",
       icon: <FaEnvelope className="text-xl" />,
       label: "Email",
       hoverColor: "hover:text-red-500"
@@ -58,8 +58,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md leading-relaxed">
-              Building intelligent systems that bridge the gap between cutting-edge AI research and real-world applications. 
-              Passionate about creating scalable solutions that make a meaningful impact.
+              Passionate about developing AI-powered solutions and building scalable applications. Specializing in 
+              computer vision, machine learning models, and end-to-end MLOps pipelines based in Dubai, UAE.
             </p>
             <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-500">
               <FaRocket className="text-emerald-500" />
@@ -107,7 +107,7 @@ const Footer = () => {
             </div>
             <div className="mt-6">
               <a 
-                href="mailto:yasserzs3@gmail.com"
+                href="mailto:yasserzaher03@gmail.com"
                 className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm font-medium"
               >
                 <FaEnvelope />
@@ -123,27 +123,7 @@ const Footer = () => {
               <p>&copy; {currentYear} Yaser Shoshaa. All rights reserved.</p>
             </div>
             
-            <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-500">
-              <div className="flex items-center space-x-2">
-                <span>Built with</span>
-                <FaHeart className="text-red-500 text-xs" />
-                <span>using</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="flex items-center space-x-1">
-                  <SiReact className="text-cyan-500" />
-                  <span>React</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <SiTailwindcss className="text-teal-500" />
-                  <span>Tailwind</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <SiVercel className="text-gray-800 dark:text-white" />
-                  <span>Vercel</span>
-                </div>
-              </div>
-            </div>
+
           </div>
           
           <div className="mt-4 text-center">
