@@ -41,8 +41,18 @@ const Navbar = () => {
     <nav className="sticky top-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200/20 dark:border-gray-700/20 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="#" className="flex items-center space-x-2 group">
-          <div className="w-10 h-10 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
-            <span className="text-white font-bold text-lg">Y</span>
+          <div className="w-10 h-10 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200 p-2">
+            <img 
+              src="/logo.svg" 
+              alt="Yaser Shoshaa Logo" 
+              className="w-full h-full object-contain filter brightness-0 invert"
+              onError={(e) => {
+                // Fallback to letter if logo doesn't load
+                e.target.style.display = 'none';
+                e.target.nextSibling.style.display = 'block';
+              }}
+            />
+            <span className="text-white font-bold text-lg hidden">Y</span>
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent dark:from-teal-400 dark:to-emerald-400">
