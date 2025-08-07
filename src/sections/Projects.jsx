@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaPlay, FaStar, FaCode } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaStar, FaCode } from 'react-icons/fa';
 import { SiPython, SiReact, SiTensorflow, SiKubernetes, SiMongodb, SiDocker } from 'react-icons/si';
 
 const projectCategories = [
@@ -8,97 +8,144 @@ const projectCategories = [
     projects: [
       {
         id: 1,
-        title: 'Intelligent Document Processing System',
-        description: 'Advanced AI system for document analysis and information extraction using computer vision and NLP. Processes 10K+ documents daily with 95% accuracy.',
-        image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
-        technologies: ['Python', 'PyTorch', 'OpenCV', 'FastAPI', 'Docker'],
-        techIcons: [<SiPython />, <SiTensorflow />, <SiDocker />],
-        github: 'https://github.com/yasserzs3/intelligent-document-processing',
-        demo: 'https://doc-processor-demo.vercel.app',
+        title: 'End-to-End MLOps Pipeline',
+        description: 'Complete MLOps pipeline implementation with automated model training, deployment, and monitoring. Includes CI/CD for machine learning workflows and model versioning.',
+        image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['Python', 'MLflow', 'Docker', 'CI/CD', 'Monitoring'],
+        techIcons: [<SiPython />, <SiDocker />],
+        github: 'https://github.com/yasserzs3/End-to-End-MLOps-Pipeline',
         featured: true,
-        stats: { stars: 127, forks: 23 }
+        stats: { stars: 0, forks: 0 }
       },
       {
         id: 2,
-        title: 'Real-time Sentiment Analysis API',
-        description: 'Scalable sentiment analysis microservice with real-time processing capabilities. Handles social media data streams and provides instant insights.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
-        technologies: ['Python', 'Transformers', 'Redis', 'PostgreSQL', 'Kubernetes'],
-        techIcons: [<SiPython />, <SiKubernetes />],
-        github: 'https://github.com/yasserzs3/sentiment-analysis-api',
-        demo: null,
+        title: 'U-Net Brain Tumor Segmentation',
+        description: 'Deep learning model for brain tumor segmentation using U-Net architecture. Implemented in Jupyter Notebook with comprehensive analysis and visualization.',
+        image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['Python', 'U-Net', 'Deep Learning', 'Medical Imaging', 'Jupyter'],
+        techIcons: [<SiPython />, <SiTensorflow />],
+        github: 'https://github.com/yasserzs3/U-Net-Brain-Tumor-Segmentation',
         featured: false,
-        stats: { stars: 89, forks: 15 }
+        stats: { stars: 0, forks: 0 }
       },
       {
         id: 3,
-        title: 'Recommender System IBCF',
-        description: 'High-performance C++ recommender system using Item-Based Collaborative Filtering. Optimized for large-scale e-commerce platforms.',
-        image: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
-        technologies: ['C++', 'Collaborative Filtering', 'Machine Learning', 'Performance Optimization'],
-        techIcons: [<FaCode />],
-        github: 'https://github.com/yasserzs3/recommender-system-ibcf',
-        demo: null,
+        title: 'Multi-Model Detection for Person Collecting Waste',
+        description: 'Computer vision system using multiple detection models to identify people collecting waste. Practical application of AI for environmental monitoring.',
+        image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['Python', 'Computer Vision', 'Object Detection', 'Multi-Model'],
+        techIcons: [<SiPython />, <SiTensorflow />],
+        github: 'https://github.com/yasserzs3/Multi-Model-Detection-for-Person-Collecting-Waste',
         featured: false,
-        stats: { stars: 45, forks: 12 }
-      }
-    ]
-  },
-  {
-    title: "Full-Stack Applications",
-    projects: [
-      {
-        id: 4,
-        title: 'AI-Powered Task Management Platform',
-        description: 'Modern productivity app with AI-driven task prioritization, smart scheduling, and team collaboration features. Built with Next.js and integrated ML models.',
-        image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
-        technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'TailwindCSS'],
-        techIcons: [<SiReact />, <SiMongodb />],
-        github: 'https://github.com/yasserzs3/ai-task-manager',
-        demo: 'https://ai-taskmanager.vercel.app',
-        featured: true,
-        stats: { stars: 156, forks: 34 }
+        stats: { stars: 0, forks: 0 }
       },
       {
-        id: 5,
-        title: 'Real-time Analytics Dashboard',
-        description: 'Interactive dashboard for business intelligence with real-time data visualization, custom metrics, and automated reporting capabilities.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
-        technologies: ['React', 'D3.js', 'Node.js', 'MongoDB', 'Socket.io'],
-        techIcons: [<SiReact />, <SiMongodb />],
-        github: 'https://github.com/yasserzs3/analytics-dashboard',
-        demo: 'https://analytics-dash.netlify.app',
+        id: 4,
+        title: 'Recommender System IBCF',
+        description: 'Fast C++ Recommender System using Item-Based Collaborative Filtering. Optimized for high-performance recommendation engines.',
+        image: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['C++', 'Collaborative Filtering', 'Algorithms', 'Performance'],
+        techIcons: [<FaCode />],
+        github: 'https://github.com/yasserzs3/recommender-system-ibcf',
         featured: false,
-        stats: { stars: 73, forks: 19 }
+        stats: { stars: 0, forks: 0 }
       }
     ]
   },
   {
-    title: "DevOps & Infrastructure",
+    title: "Data Engineering & Analytics",
     projects: [
       {
-        id: 6,
-        title: 'Kubernetes ML Pipeline',
-        description: 'Scalable machine learning pipeline on Kubernetes with automated model training, deployment, and monitoring. Supports A/B testing and model versioning.',
-        image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
-        technologies: ['Kubernetes', 'Docker', 'MLflow', 'Prometheus', 'Azure'],
-        techIcons: [<SiKubernetes />, <SiDocker />],
-        github: 'https://github.com/yasserzs3/kubernetes-ml-pipeline',
-        demo: null,
+        id: 5,
+        title: 'ETL Pipeline for Retail Sales Data',
+        description: 'Robust Extract, Transform, Load pipeline for retail sales data processing. Built with Python for scalable data transformation and analysis.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['Python', 'ETL', 'Data Processing', 'Analytics'],
+        techIcons: [<SiPython />],
+        github: 'https://github.com/yasserzs3/ETL-Pipeline-for-Retail-Sales-Data',
         featured: true,
-        stats: { stars: 92, forks: 28 }
+        stats: { stars: 0, forks: 0 }
+      },
+      {
+        id: 6,
+        title: 'Data Science Project (AIN 2002)',
+        description: 'Comprehensive data science project covering statistical analysis, machine learning, and data visualization. Academic project with practical implementations.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['Jupyter Notebook', 'Data Science', 'Statistics', 'ML'],
+        techIcons: [<SiPython />],
+        github: 'https://github.com/yasserzs3/Data_Science_Project',
+        featured: false,
+        stats: { stars: 1, forks: 0 }
       },
       {
         id: 7,
-        title: 'ETL Pipeline for Retail Analytics',
-        description: 'Robust data pipeline processing millions of retail transactions daily. Includes data validation, transformation, and real-time monitoring.',
-        image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
-        technologies: ['Python', 'Apache Airflow', 'PostgreSQL', 'Redis', 'Grafana'],
-        techIcons: [<SiPython />, <SiMongodb />],
-        github: 'https://github.com/yasserzs3/retail-etl-pipeline',
-        demo: null,
+        title: 'Chess Games Analysis',
+        description: 'Statistical analysis of chess games from Lichess platform using R statistical tools. Data analysis and visualization of chess game patterns.',
+        image: 'https://images.unsplash.com/photo-1586165368502-1bad197a6461?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['R', 'Statistics', 'Data Analysis', 'Visualization'],
+        techIcons: [<FaCode />],
+        github: 'https://github.com/yasserzs3/chess-games-analysis',
         featured: false,
-        stats: { stars: 67, forks: 21 }
+        stats: { stars: 0, forks: 0 }
+      }
+    ]
+  },
+  {
+    title: "Full-Stack & Web Development",
+    projects: [
+      {
+        id: 8,
+        title: 'Portfolio Website',
+        description: 'Modern, responsive portfolio website built with React and JavaScript. Features dark mode, smooth animations, and modern design patterns.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['JavaScript', 'React', 'CSS', 'Responsive Design'],
+        techIcons: [<SiReact />],
+        github: 'https://github.com/yasserzs3/yasserzs3.github.io',
+        featured: false,
+        stats: { stars: 0, forks: 0 }
+      },
+      {
+        id: 9,
+        title: 'Conference Scheduling System',
+        description: 'Web-based conference scheduling application built with HTML, CSS, and JavaScript. Manages conference events, speakers, and attendee scheduling.',
+        image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['HTML', 'CSS', 'JavaScript', 'Web Development'],
+        techIcons: [<FaCode />],
+        github: 'https://github.com/yasserzs3/Conference-Scheduling',
+        featured: false,
+        stats: { stars: 0, forks: 0 }
+      }
+    ]
+  },
+  {
+    title: "Cloud & Infrastructure",
+    projects: [
+      {
+        id: 10,
+        title: 'MongoDB Statefulset with Microsoft Azure',
+        description: 'Implementation of MongoDB StatefulSet deployment on Microsoft Azure cloud platform. Includes Kubernetes configuration and cloud infrastructure setup.',
+        image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['Python', 'MongoDB', 'Azure', 'Kubernetes', 'Cloud'],
+        techIcons: [<SiPython />, <SiKubernetes />, <SiMongodb />],
+        github: 'https://github.com/yasserzs3/Monogodb-Statefulset-With-Microsoft-Azure',
+        featured: true,
+        stats: { stars: 0, forks: 0 }
+      }
+    ]
+  },
+  {
+    title: "Fun Projects",
+    projects: [
+      {
+        id: 11,
+        title: 'Snake Game',
+        description: 'Classic Snake game implemented in Python. A fun project showcasing game development skills and Python programming fundamentals.',
+        image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
+        technologies: ['Python', 'Game Development', 'Programming'],
+        techIcons: [<SiPython />],
+        github: 'https://github.com/yasserzs3/Snake',
+        featured: false,
+        stats: { stars: 0, forks: 0 }
       }
     ]
   }
@@ -213,17 +260,7 @@ const Projects = () => {
                             <span>Code</span>
                           </a>
                           
-                          {project.demo && (
-                            <a 
-                              href={project.demo} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-medium"
-                            >
-                              <FaPlay className="text-sm" />
-                              <span>Demo</span>
-                            </a>
-                          )}
+
                         </div>
                         
                         <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
