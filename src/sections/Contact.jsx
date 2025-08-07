@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaCalendarAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,19 +17,40 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      // Using Formspree for form handling
+      const response = await fetch('https://formspree.io/f/meozpgrl', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
       
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+    }
   };
   
   return (
@@ -72,24 +93,13 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">Email</h4>
-                    <a href="mailto:yasserzs3@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
-                      yasserzs3@gmail.com
+                    <a href="mailto:yasserzaher03@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+                      yasserzaher03@gmail.com
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center text-white mr-4 shadow-lg">
-                    <FaCalendarAlt className="text-lg" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">Schedule a Call</h4>
-                    <a href="https://calendly.com/yasserzs3" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
-                      Book a 30-min consultation
-                    </a>
-                  </div>
-                </div>
-                
+
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center text-white mr-4 shadow-lg">
                     <FaMapMarkerAlt className="text-lg" />
@@ -97,7 +107,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">Location</h4>
                     <p className="text-gray-600 dark:text-gray-400">
-                      San Francisco Bay Area, CA
+                      Dubai, United Arab Emirates
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-500">
                       Available for remote work globally
@@ -114,7 +124,7 @@ const Contact = () => {
               </h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://linkedin.com/in/yasserzs3" 
+                  href="https://linkedin.com/in/yaserzk/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-teal-600 hover:bg-teal-700 rounded-xl flex items-center justify-center text-white transition-all duration-200 transform hover:scale-105 shadow-lg"
@@ -130,12 +140,12 @@ const Contact = () => {
                   <FaGithub className="text-lg" />
                 </a>
                 <a 
-                  href="https://twitter.com/yasserzs3" 
+                  href="https://instagram.com/yasser.zs3" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-cyan-500 hover:bg-cyan-600 rounded-xl flex items-center justify-center text-white transition-all duration-200 transform hover:scale-105 shadow-lg"
+                  className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl flex items-center justify-center text-white transition-all duration-200 transform hover:scale-105 shadow-lg"
                 >
-                  <FaTwitter className="text-lg" />
+                  <FaInstagram className="text-lg" />
                 </a>
               </div>
             </div>
@@ -157,7 +167,7 @@ const Contact = () => {
           >
             <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 dark:border-gray-700/20">
               <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
-                💬 Send a Message
+                💬 Send a Message or Schedule a Call
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -265,24 +275,20 @@ const Contact = () => {
                     ✅ Message sent successfully! I'll get back to you within 24 hours.
                   </motion.div>
                 )}
+                
+                {submitStatus === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-red-600 dark:text-red-400 p-4 bg-red-100/80 dark:bg-red-900/30 rounded-xl border border-red-200 dark:border-red-800 backdrop-blur-sm"
+                  >
+                    ❌ Failed to send message. Please try again or contact me directly at yasserzaher03@gmail.com
+                  </motion.div>
+                )}
               </form>
             </div>
             
-            {/* Additional CTA */}
-            <div className="mt-8 text-center">
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Prefer a quick chat? Let's connect directly:
-              </p>
-              <a 
-                href="https://calendly.com/yasserzs3" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-white dark:hover:bg-gray-800 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 font-medium text-gray-700 dark:text-gray-300"
-              >
-                <FaCalendarAlt />
-                <span>Schedule a Call</span>
-              </a>
-            </div>
+
           </motion.div>
         </div>
       </div>
