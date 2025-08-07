@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Yaser Shoshaa - AI Developer & Machine Learning Engineer. Building intelligent systems and creating solutions at the intersection of AI and software engineering." />
     <meta name="keywords" content="AI, Machine Learning, Developer, Data Science, Portfolio, Python, PyTorch, TensorFlow, React" />
@@ -16,14 +16,15 @@
     <title>Yaser Shoshaa - AI Engineer</title>
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.classList.add('dark');
       } else {
+        // Default to light mode regardless of system preference
         document.documentElement.classList.remove('dark');
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-DbCRiiOK.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BKF5hIGg.css">
+    <script type="module" crossorigin src="/assets/index-C4cObTCr.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D0hxnJy5.css">
   </head>
   <body>
     <div id="root"></div>
