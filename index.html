@@ -16,9 +16,10 @@
     <title>Yaser Shoshaa - AI Engineer</title>
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.classList.add('dark');
       } else {
+        // Default to light mode regardless of system preference
         document.documentElement.classList.remove('dark');
       }
     </script>

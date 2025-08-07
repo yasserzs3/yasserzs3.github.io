@@ -6,15 +6,14 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Check if user has a dark mode preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     // Check if user has previously set a theme preference
     const savedTheme = localStorage.getItem('theme');
     
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    if (savedTheme === 'dark') {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
     } else {
+      // Default to light mode regardless of system preference
       setIsDarkMode(false);
       document.documentElement.classList.remove('dark');
     }
