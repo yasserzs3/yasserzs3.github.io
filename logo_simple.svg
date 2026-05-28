@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" width="100%" height="100%">
+  <defs>
+    <!-- Vibrant primary gradient aligned with the diagonal sweep of the crest -->
+    <linearGradient id="crest-gradient-simple" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="50%" stop-color="#D946EF" />
+      <stop offset="100%" stop-color="#FFE600" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Asymmetric Crest (F1 Nosecone & Skate Blade Runner profile) - Bold stroke, transparent background -->
+  <path d="M 30,170 C 45,120 90,55 170,30 C 172,30 172,32 170,35 C 150,65 140,90 148,105 C 149,107 146,110 142,109 C 135,107 132,112 135,118 C 142,122 153,124 158,118 C 125,150 80,172 30,170 Z" 
+        stroke="url(#crest-gradient-simple)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Inside Fanning "Drift Slate" Speed Paths emerging from bottom-left point - Bold stroke -->
+  <path d="M 32,168 C 50,123 92,63 166,34" stroke="url(#crest-gradient-simple)" stroke-width="11" stroke-linecap="round" fill="none" />
+  <path d="M 35,166 C 60,128 100,75 158,45" stroke="url(#crest-gradient-simple)" stroke-width="11" stroke-linecap="round" fill="none" />
+  <path d="M 38,164 C 70,133 110,90 146,65" stroke="url(#crest-gradient-simple)" stroke-width="11" stroke-linecap="round" fill="none" />
+  <path d="M 42,162 C 80,140 115,115 136,90" stroke="url(#crest-gradient-simple)" stroke-width="11" stroke-linecap="round" fill="none" />
+</svg>
