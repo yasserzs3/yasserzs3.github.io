@@ -68,11 +68,11 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         {/* Brand/Logo */}
         <a href="#" className="flex items-center space-x-2 group">
-          <div className="w-9 h-9 bg-gradient-to-r from-cyan-500 via-emerald-500 to-indigo-500 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300 p-1.5 shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+          <div className="w-9 h-9 bg-slate-950/30 dark:bg-black/30 border border-white/10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all duration-300 p-1 shadow-[0_0_15px_rgba(6,182,212,0.1)] group-hover:shadow-[0_0_20px_rgba(217,70,239,0.25)] group-hover:border-cyan-500/30">
             <img 
               src="/logo.svg" 
               alt="Yaser Shoshaa Logo" 
-              className="w-full h-full object-contain filter brightness-0 invert"
+              className="w-full h-full object-contain"
               onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'block';
