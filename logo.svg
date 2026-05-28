@@ -7,9 +7,57 @@
       <stop offset="100%" stop-color="#FFE600" />
     </linearGradient>
 
+    <!-- Glowing Electric Cyan gradient for Path 1 -->
+    <linearGradient id="cyan-glow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#0072FF" />
+    </linearGradient>
+
+    <!-- Glowing Royal Purple/Violet gradient for Path 2 -->
+    <linearGradient id="purple-glow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+
+    <!-- Glowing Pink/Magenta gradient for Path 3 -->
+    <linearGradient id="magenta-glow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#F43F5E" />
+    </linearGradient>
+
+    <!-- Glowing Solar Yellow/Gold gradient for Path 4 -->
+    <linearGradient id="yellow-glow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFE600" />
+      <stop offset="100%" stop-color="#FF6B00" />
+    </linearGradient>
+
+    <!-- Rich midnight violet-slate gradient for physical 3D backing shade -->
+    <linearGradient id="crest-fill-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#070510" />
+      <stop offset="50%" stop-color="#0F0920" />
+      <stop offset="100%" stop-color="#050912" />
+    </linearGradient>
+
+    <!-- Smooth center ambient spotlight glow overlay -->
+    <radialGradient id="neon-ambient-glow" cx="60%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#D946EF" stop-opacity="0.25" />
+      <stop offset="45%" stop-color="#00F0FF" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
     <!-- Glowing filters for high-contrast chalkboard visibility -->
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+    <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur1" />
+      <feGaussianBlur stdDeviation="2.5" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -39,28 +87,50 @@
     }
 
     /* Core vector classes with transition systems */
+    .crest-backdrop {
+      transition: fill 0.4s ease, opacity 0.4s ease;
+    }
+
     .crest-outline {
       stroke: url(#crest-gradient);
-      stroke-width: 1.5px;
+      stroke-width: 1.8px;
       stroke-linecap: round;
       stroke-linejoin: round;
       fill: none;
       stroke-dasharray: 800;
       stroke-dashoffset: 800;
       animation: drawIn 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      transition: stroke-width 0.4s ease, filter 0.4s ease, stroke 0.4s ease;
+      transition: stroke-width 0.4s ease, filter 0.4s ease, stroke-width 0.4s ease;
     }
 
-    .drift-path {
-      stroke: url(#crest-gradient);
-      stroke-width: 3.2px;
+    .drift-path-glow {
       stroke-linecap: round;
       fill: none;
       stroke-dasharray: 500;
       stroke-dashoffset: 500;
-      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s ease, stroke-width 0.4s ease;
+      filter: url(#neon-glow);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
+    .drift-path-core {
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), stroke-width 0.4s ease;
+    }
+
+    .drift-path-highlight {
+      stroke: #FFFFFF;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      opacity: 0.85;
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Synchronized animations for layers */
     .drift-path-1 {
       animation: drawIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.1s;
     }
@@ -119,13 +189,16 @@
 
     /* Interactive hover states ("responble me more") */
     svg:hover .crest-outline {
-      stroke-width: 2.2px;
-      filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.4)) drop-shadow(0 0 12px rgba(217, 70, 239, 0.3));
+      stroke-width: 2.5px;
+      filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.5)) drop-shadow(0 0 12px rgba(217, 70, 239, 0.4));
     }
 
-    svg:hover .drift-path {
-      filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.7)) drop-shadow(0 0 16px rgba(217, 70, 239, 0.4));
-      stroke-width: 3.8px;
+    svg:hover .crest-backdrop {
+      opacity: 0.95;
+    }
+
+    svg:hover .drift-path-core {
+      stroke-width: 4.5px;
     }
 
     /* Asymmetric expansion on hover matching aerodynamics */
@@ -133,6 +206,10 @@
       transform: translate(-4px, -3px);
     }
     
+    svg:hover .drift-path-2 {
+      transform: translate(-1px, -1px);
+    }
+
     svg:hover .drift-path-3 {
       transform: translate(2px, 3px);
     }
@@ -198,24 +275,37 @@
   <text x="125" y="80" class="blueprint-text">DRAG_COEFF: 0.23</text>
 
   <!-- ================= VARIATION 2: THE AERODYNAMIC SLATE CREST ================= -->
-  <!-- Outer Asymmetric Crest (F1 Nosecone & Skate Blade Runner profile) -->
-  <path d="M 30,170 C 45,120 90,55 170,30 C 172,30 172,32 170,35 C 150,65 140,90 148,105 C 149,107 146,110 142,109 C 135,107 132,112 135,118 C 142,122 153,124 158,118 C 125,150 80,172 30,170 Z" 
-        class="crest-outline" />
 
-  <!-- Inside Fanning "Drift Slate" Speed Paths emerging from bottom-left point -->
+  <!-- Shaded Solid Background of the Crest - giving it smooth volumetric shape -->
+  <path d="M 30,170 C 45,120 90,55 170,30 C 172,30 172,32 170,35 C 150,65 140,90 148,105 C 149,107 146,110 142,109 C 135,107 132,112 135,118 C 142,122 153,124 158,118 C 125,150 80,172 30,170 Z" 
+        fill="url(#crest-fill-gradient)" class="crest-backdrop" opacity="0.9" />
+
+  <!-- Volumetric inner spotlight glow overlay -->
+  <path d="M 30,170 C 45,120 90,55 170,30 C 172,30 172,32 170,35 C 150,65 140,90 148,105 C 149,107 146,110 142,109 C 135,107 132,112 135,118 C 142,122 153,124 158,118 C 125,150 80,172 30,170 Z" 
+        fill="url(#neon-ambient-glow)" class="crest-backdrop" opacity="0.8" style="mix-blend-mode: screen;" />
+
+  <!-- Outer Asymmetric Crest Outline -->
+  <path d="M 30,170 C 45,120 90,55 170,30 C 172,30 172,32 170,35 C 150,65 140,90 148,105 C 149,107 146,110 142,109 C 135,107 132,112 135,118 C 142,122 153,124 158,118 C 125,150 80,172 30,170 Z" 
+        class="crest-outline" filter="url(#subtle-glow)" />
+
+  <!-- Inside Fanning "Drift Slate" Speed Paths - Multi-layered for ultra-smooth 3D neon glow -->
   <!-- Path 1 (Top-Left Speed Loop - Cyan Focus) -->
-  <path d="M 32,168 C 50,123 92,63 166,34" 
-        class="drift-path drift-path-1" />
+  <path d="M 32,168 C 50,123 92,63 166,34" class="drift-path-glow drift-path-1" stroke="url(#cyan-glow-grad)" stroke-width="10" opacity="0.2" />
+  <path d="M 32,168 C 50,123 92,63 166,34" class="drift-path-core drift-path-1" stroke="url(#cyan-glow-grad)" stroke-width="3.5" opacity="0.9" />
+  <path d="M 32,168 C 50,123 92,63 166,34" class="drift-path-highlight drift-path-1" stroke-width="1.0" />
 
   <!-- Path 2 (Middle-Left Speed Loop - Purple Focus) -->
-  <path d="M 35,166 C 60,128 100,75 158,45" 
-        class="drift-path drift-path-2" />
+  <path d="M 35,166 C 60,128 100,75 158,45" class="drift-path-glow drift-path-2" stroke="url(#purple-glow-grad)" stroke-width="10" opacity="0.2" />
+  <path d="M 35,166 C 60,128 100,75 158,45" class="drift-path-core drift-path-2" stroke="url(#purple-glow-grad)" stroke-width="3.5" opacity="0.9" />
+  <path d="M 35,166 C 60,128 100,75 158,45" class="drift-path-highlight drift-path-2" stroke-width="1.0" />
 
   <!-- Path 3 (Middle-Right Speed Loop - Magenta Focus) -->
-  <path d="M 38,164 C 70,133 110,90 146,65" 
-        class="drift-path drift-path-3" />
+  <path d="M 38,164 C 70,133 110,90 146,65" class="drift-path-glow drift-path-3" stroke="url(#magenta-glow-grad)" stroke-width="10" opacity="0.2" />
+  <path d="M 38,164 C 70,133 110,90 146,65" class="drift-path-core drift-path-3" stroke="url(#magenta-glow-grad)" stroke-width="3.5" opacity="0.9" />
+  <path d="M 38,164 C 70,133 110,90 146,65" class="drift-path-highlight drift-path-3" stroke-width="1.0" />
 
   <!-- Path 4 (Bottom-Right Speed Loop - Yellow Focus) -->
-  <path d="M 42,162 C 80,140 115,115 136,90" 
-        class="drift-path drift-path-4" />
+  <path d="M 42,162 C 80,140 115,115 136,90" class="drift-path-glow drift-path-4" stroke="url(#yellow-glow-grad)" stroke-width="10" opacity="0.2" />
+  <path d="M 42,162 C 80,140 115,115 136,90" class="drift-path-core drift-path-4" stroke="url(#yellow-glow-grad)" stroke-width="3.5" opacity="0.9" />
+  <path d="M 42,162 C 80,140 115,115 136,90" class="drift-path-highlight drift-path-4" stroke-width="1.0" />
 </svg>
