@@ -61,8 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let mouse = { x: null, y: null, active: false, radius: 220 };
 
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Principal Performance Optimization: Cap DPR at 2.0 to protect GPU pixel fill rate on ultra-high-res displays
+    const dpr = Math.min(window.devicePixelRatio || 1, 2.0);
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    ctx.scale(dpr, dpr);
     initParticles();
   }
   
@@ -139,21 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Draw high-brightness electric filament trail arcs
+  // Draw high-brightness electric filament trail arcs (Highly optimized)
   function drawElectricTrails() {
     const isDark = document.documentElement.classList.contains('dark');
     const accentColor = isDark ? '#00F0FF' : '#007D8F';
-    const secondaryColor = isDark ? '#D946EF' : '#8B5CF6';
     
-    // Configure screens and intensive glowing chromatography
-    ctx.globalCompositeOperation = 'screen';
-    ctx.shadowBlur = mouse.active ? 15 : 0;
-    ctx.shadowColor = accentColor;
-
+    // 1. Batch render all slow fading ambient connections in a single draw call (O(1) Draw Calls)
+    ctx.beginPath();
+    ctx.strokeStyle = isDark ? 'rgba(110, 109, 153, 0.05)' : 'rgba(110, 109, 153, 0.08)';
+    ctx.lineWidth = 0.8;
     for (let i = 0; i < particles.length; i++) {
       const p1 = particles[i];
-
-      // Slow fading ambient connections
       for (let j = i + 1; j < particles.length; j++) {
         const p2 = particles[j];
         const dx = p1.x - p2.x;
@@ -161,18 +162,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < 130) {
-          const alpha = (130 - dist) / 130 * 0.12;
-          ctx.beginPath();
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = isDark ? `rgba(90, 99, 104, ${alpha})` : `rgba(138, 149, 155, ${alpha})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
         }
       }
+    }
+    ctx.stroke();
 
-      // High-brightness electric mouse attraction filaments (Lightning arcs)
-      if (mouse.active) {
+    // 2. Configure screen blend and chromatography for lightning attractions
+    ctx.globalCompositeOperation = 'screen';
+    ctx.shadowBlur = mouse.active ? 15 : 0;
+    ctx.shadowColor = accentColor;
+
+    if (mouse.active) {
+      for (let i = 0; i < particles.length; i++) {
+        const p1 = particles[i];
         const dx = mouse.x - p1.x;
         const dy = mouse.y - p1.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -190,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
           for (let s = 1; s < segments; s++) {
             const progress = s / segments;
-            // Generate perpendicular displacement
             const perpX = -segmentY;
             const perpY = segmentX;
             const wave = Math.sin(progress * Math.PI) * (Math.random() - 0.5) * 12;
@@ -202,7 +205,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
           ctx.lineTo(mouse.x, mouse.y);
           
-          // Dual color neon electric gradient
           const grad = ctx.createLinearGradient(p1.x, p1.y, mouse.x, mouse.y);
           grad.addColorStop(0, `rgba(0, 240, 255, ${alpha})`);
           grad.addColorStop(1, `rgba(217, 70, 239, ${alpha})`);
@@ -267,11 +269,11 @@ document.addEventListener('DOMContentLoaded', () => {
     mouse.active = true;
     
     if (cursorGlow) {
+      // Use CSS transform translate3d to offload rendering coordinates directly to the GPU compositor
       cursorGlow.style.opacity = '1';
-      cursorGlow.style.left = `${e.clientX}px`;
-      cursorGlow.style.top = `${e.clientY}px`;
+      cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     }
-  });
+  }, { passive: true });
 
   document.addEventListener('mouseleave', () => {
     mouse.active = false;
