@@ -14,35 +14,36 @@
     <meta property="og:description" content="Engineering high-throughput AI architecture and secure fintech infrastructure." />
     <meta property="og:type" content="website" />
     
-    <!-- Google Fonts: Plus Jakarta Sans (technical geometry) & Architects Daughter (handwritten chalk blueprint) -->
+    <!-- Preconnect to external assets to optimize loading performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: Plus Jakarta Sans (technical geometry) & Architects Daughter (handwritten chalk blueprint) with display=swap non-blocking trigger -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Architects+Daughter&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <title>Yaser Shoshaa | AI Architect & Fintech Professional</title>
     
-    <!-- Custom Style Sheet -->
-    <script type="module" crossorigin src="/assets/index-6H9mKMkq.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Cdadp7xK.css">
+    <!-- Custom Performance-Tuned style sheet -->
+    <script type="module" crossorigin src="/assets/index-CB6wC6s2.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B3BOTVpS.css">
   </head>
   <body>
-    <!-- Fullscreen High-Brightness Electric Blackboard Canvas -->
+    <!-- Fullscreen High-Brightness Electric Blackboard Canvas Backdrop -->
     <canvas id="neural-canvas" class="neural-canvas"></canvas>
 
-    <!-- Fine Chalk-Dust Grain Overlay (Chalkboard physical texture) -->
+    <!-- Fine Chalk-Dust Physical Grain Overlay (Hardware accelerated texture layer) -->
     <div class="chalk-grain"></div>
 
-    <!-- Active Spotlight/Glow coordinate projection -->
+    <!-- Real-time Spotlight Glow layer -->
     <div id="cursor-glow" class="cursor-glow"></div>
 
-    <!-- Camera Shutter Visual Shutter Shutter Flash overlay -->
+    <!-- Camera Shutter Flash overlay -->
     <div id="qa-shutter" class="qa-shutter"></div>
 
     <!-- Floating Capsule Navbar -->
     <nav class="capsule-nav" id="main-nav">
       <div class="nav-container">
         <!-- Logo -->
-        <a href="#" class="nav-logo">
+        <a href="#" class="nav-logo" aria-label="Yaser Shoshaa Portfolio Home">
           <div class="logo-box">
             <span class="logo-fallback">YS</span>
           </div>
@@ -53,7 +54,7 @@
         </a>
 
         <!-- Desktop Links -->
-        <div class="nav-links">
+        <div class="nav-links" role="navigation">
           <a href="#home" class="nav-item active" data-sec="home">Home</a>
           <a href="#profile" class="nav-item" data-sec="profile">Profile</a>
           <a href="#stack" class="nav-item" data-sec="stack">Stack</a>
@@ -62,16 +63,16 @@
           <div class="nav-indicator"></div>
         </div>
 
-        <!-- Theme Toggle & Menu -->
+        <!-- Action triggers -->
         <div class="nav-actions">
-          <button id="theme-toggle" class="action-btn" aria-label="Toggle theme">
+          <button id="theme-toggle" class="action-btn" aria-label="Toggle theme settings">
             <!-- Sun Icon -->
-            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
             <!-- Moon Icon -->
-            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
           </button>
           
-          <button id="menu-toggle" class="action-btn mobile-only" aria-label="Toggle mobile menu">
+          <button id="menu-toggle" class="action-btn mobile-only" aria-label="Toggle mobile links menu">
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
           </button>
@@ -111,7 +112,7 @@
       <div class="qa-modal-card chalk-card">
         <div class="qa-modal-header font-mono">
           <span class="text-yellow">[QA INTEGRITY AUDIT SUCCESSFUL]</span>
-          <button id="qa-modal-close" class="qa-close-btn">&times;</button>
+          <button id="qa-modal-close" class="qa-close-btn" aria-label="Close modal report">&times;</button>
         </div>
         <div class="qa-modal-body">
           <pre id="qa-modal-logs" class="qa-modal-logs font-mono"></pre>
@@ -149,7 +150,7 @@
               <div class="hero-actions">
                 <a href="#projects" class="chalk-btn btn-primary-mint font-mono">
                   <span>Inspect Codebases</span>
-                  <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="#connection" class="chalk-btn btn-sec-dust font-mono">
                   <span>Establish Comms</span>
@@ -189,7 +190,7 @@
 
                 <!-- Custom SVG Dynamic Blackboard Oscilloscope -->
                 <div class="telemetry-oscilloscope">
-                  <svg class="oscilloscope-svg" viewBox="0 0 400 100" preserveAspectRatio="none">
+                  <svg class="oscilloscope-svg" viewBox="0 0 400 100" preserveAspectRatio="none" width="100%" height="100%">
                     <path class="oscilloscope-grid" d="M0,25 L400,25 M0,50 L400,50 M0,75 L400,75 M100,0 L100,100 M200,0 L200,100 M300,0 L300,100" />
                     <path class="oscilloscope-wave" id="oscilloscope-wave" d="M0,50 Q50,20 100,50 T200,50 T300,50 T400,50" />
                   </svg>
@@ -224,7 +225,7 @@
               </p>
 
               <!-- Custom SVG Neural Node Grid decoration -->
-              <svg class="bento-neural-net" viewBox="0 0 200 100">
+              <svg class="bento-neural-net" viewBox="0 0 200 100" width="100%" height="100">
                 <line x1="20" y1="50" x2="60" y2="20" stroke="var(--chalk-dust)" stroke-width="1.5" stroke-dasharray="3 3" />
                 <line x1="20" y1="50" x2="60" y2="80" stroke="var(--chalk-dust)" stroke-width="1.5" stroke-dasharray="3 3" />
                 <line x1="60" y1="20" x2="120" y2="30" stroke="var(--chalk-dust)" stroke-width="1.5" stroke-dasharray="3 3" />
@@ -415,7 +416,7 @@
                 <div class="project-card-footer">
                   <a href="https://github.com/yasserzs3/End-to-End-MLOps-Pipeline" target="_blank" rel="noopener noreferrer" class="proj-link-btn font-mono">
                     <span>Inspect Codebase</span>
-                    <svg class="proj-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg class="proj-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
                 </div>
               </div>
@@ -570,8 +571,8 @@
 
           <!-- Bottom CTA to GitHub -->
           <div class="text-center mt-12">
-            <a href="https://github.com/yasserzs3" target="_blank" rel="noopener noreferrer" class="chalk-btn btn-primary-mint btn-github mx-auto">
-              <svg class="git-icon" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.193 22 16.44 22 12.017 22 6.484 17.522 2 12 2z"/></svg>
+            <a href="https://github.com/yasserzs3" target="_blank" rel="noopener noreferrer" class="chalk-btn btn-primary-mint btn-github mx-auto" aria-label="Explore Yaser's GitHub Repositories">
+              <svg class="git-icon" fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.193 22 16.44 22 12.017 22 6.484 17.522 2 12 2z"/></svg>
               <span>Explore Full System Catalog on GitHub</span>
             </a>
           </div>
@@ -597,7 +598,7 @@
                 <div class="contact-info-list">
                   <div class="info-row">
                     <div class="info-icon text-mint">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </div>
                     <div>
                       <span class="info-label font-sketch">direct mail</span>
@@ -607,7 +608,7 @@
 
                   <div class="info-row">
                     <div class="info-icon text-yellow">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
                     </div>
                     <div>
                       <span class="info-label font-sketch">current hq</span>
@@ -621,14 +622,14 @@
               <div class="chalk-card p-8 flex-between-row">
                 <h3 class="contact-card-title text-left font-mono">// social doors</h3>
                 <div class="social-links-row">
-                  <a href="https://linkedin.com/in/yaserzk/" target="_blank" rel="noopener noreferrer" class="social-circle text-mint hover-glow-mint" aria-label="LinkedIn">
-                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <a href="https://linkedin.com/in/yaserzk/" target="_blank" rel="noopener noreferrer" class="social-circle text-mint hover-glow-mint" aria-label="LinkedIn Profile">
+                    <svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                   </a>
-                  <a href="https://github.com/yasserzs3" target="_blank" rel="noopener noreferrer" class="social-circle text-yellow hover-glow-yellow" aria-label="GitHub">
-                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.193 22 16.44 22 12.017 22 6.484 17.522 2 12 2z"/></svg>
+                  <a href="https://github.com/yasserzs3" target="_blank" rel="noopener noreferrer" class="social-circle text-yellow hover-glow-yellow" aria-label="GitHub Profile">
+                    <svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.193 22 16.44 22 12.017 22 6.484 17.522 2 12 2z"/></svg>
                   </a>
-                  <a href="https://instagram.com/yasser.zs3" target="_blank" rel="noopener noreferrer" class="social-circle text-white hover-glow-white" aria-label="Instagram">
-                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  <a href="https://instagram.com/yasser.zs3" target="_blank" rel="noopener noreferrer" class="social-circle text-white hover-glow-white" aria-label="Instagram Profile">
+                    <svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                   </a>
                 </div>
               </div>
@@ -675,7 +676,7 @@
                   <button type="submit" id="form-submit-btn" class="chalk-btn btn-primary-mint mt-8 w-full">
                     <span class="btn-text">Transmit System Handshake</span>
                     <!-- Inline SVG paper plane -->
-                    <svg class="btn-send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    <svg class="btn-send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                   </button>
 
                   <div id="form-feedback" class="form-feedback-pane mt-4 font-mono text-center"></div>
@@ -696,6 +697,6 @@
       </div>
     </footer>
 
-    <!-- Custom Script File -->
+    <!-- Custom Script File loaded asynchronously -->
   </body>
 </html>
