@@ -8,6 +8,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   
   /* -------------------------------------------------------------------
+     00. QA PANEL DEVELOPMENT GATE
+     ------------------------------------------------------------------- */
+  const urlParams = new URLSearchParams(window.location.search);
+  const showQA = urlParams.get('qa') === 'true' || urlParams.get('dev') === 'true';
+  const devPanel = document.getElementById('qa-panel');
+  if (devPanel && showQA) {
+    devPanel.style.display = 'block';
+  }
+  
+  /* -------------------------------------------------------------------
      01. ACTIVE YEAR INJECTOR
      ------------------------------------------------------------------- */
   const yearSpan = document.getElementById('current-year');

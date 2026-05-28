@@ -1253,6 +1253,7 @@ html:not(.dark) .img-gradient-overlay {
    15. INTEGRATED QA AUTOMATION MODULE PANEL
    --------------------------------------------------------------------- */
 .qa-panel {
+  display: none; /* Hidden by default in production */
   position: fixed;
   top: 100px;
   right: 24px;
