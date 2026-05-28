@@ -9,6 +9,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
       },
       colors: {
         purple: {
@@ -28,4 +29,3 @@ export default {
   },
   plugins: [],
 }
-

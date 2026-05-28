@@ -1,33 +1,32 @@
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaCode, FaRocket } from 'react-icons/fa';
 
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
     {
       href: "https://github.com/yasserzs3",
-      icon: <FaGithub className="text-xl" />,
+      icon: <FaGithub className="text-lg" />,
       label: "GitHub",
-      hoverColor: "hover:text-gray-800 dark:hover:text-white"
+      glowClass: "hover:text-white hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
     },
     {
       href: "https://linkedin.com/in/yaserzk/",
-      icon: <FaLinkedin className="text-xl" />,
+      icon: <FaLinkedin className="text-lg" />,
       label: "LinkedIn",
-      hoverColor: "hover:text-teal-600"
+      glowClass: "hover:text-cyan-400 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
     },
     {
       href: "https://instagram.com/yasser.zs3",
-      icon: <FaInstagram className="text-xl" />,
+      icon: <FaInstagram className="text-lg" />,
       label: "Instagram",
-      hoverColor: "hover:text-pink-500"
+      glowClass: "hover:text-pink-400 hover:border-pink-500/40 hover:shadow-[0_0_20px_rgba(236,72,153,0.4)]"
     },
     {
       href: "mailto:yasserzaher03@gmail.com",
-      icon: <FaEnvelope className="text-xl" />,
+      icon: <FaEnvelope className="text-lg" />,
       label: "Email",
-      hoverColor: "hover:text-red-500"
+      glowClass: "hover:text-indigo-400 hover:border-indigo-500/40 hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]"
     }
   ];
 
@@ -39,55 +38,59 @@ const Footer = () => {
   ];
   
   return (
-    <footer className="bg-gradient-to-br from-gray-50 to-teal-50 dark:from-gray-900 dark:to-slate-900 border-t border-gray-200/20 dark:border-gray-700/20">
-      <div className="container mx-auto px-4 py-16">
+    <footer className="relative bg-black/60 backdrop-blur-md border-t border-white/5 py-16 mt-20 overflow-hidden">
+      {/* Background neon flares for depth */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full filter blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full filter blur-[100px] animate-pulse"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
-          {/* Brand Section */}
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-xl flex items-center justify-center p-2">
+          {/* Brand Column */}
+          <div className="md:col-span-2 space-y-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 via-emerald-500 to-indigo-500 rounded-xl flex items-center justify-center p-2 shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                 <img 
                   src="/logo.svg" 
                   alt="Yaser Shoshaa Logo" 
                   className="w-full h-full object-contain filter brightness-0 invert"
                   onError={(e) => {
-                    // Fallback to letter if logo doesn't load
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'block';
                   }}
                 />
-                <span className="text-white font-bold text-xl hidden">Y</span>
+                <span className="text-white font-extrabold text-sm hidden font-heading">Y</span>
               </div>
               <div>
-                <h2 className="text-xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent dark:from-teal-400 dark:to-emerald-400">
+                <h2 className="text-lg font-black tracking-wide text-white font-heading">
                   Yaser Shoshaa
                 </h2>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  AI Engineer & Full-Stack Developer
+                <p className="text-xs text-cyan-400 font-bold uppercase tracking-wider -mt-0.5">
+                  AI Engineer & Developer
                 </p>
               </div>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md leading-relaxed">
-              Passionate about developing AI-powered solutions and building scalable applications. Specializing in 
-              computer vision, machine learning models, and end-to-end MLOps pipelines based in Dubai, UAE.
+            <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
+              Developing production-ready artificial intelligence models, computer vision systems, MLOps orchestration architectures, and full-stack software solutions out of Dubai, UAE.
             </p>
-            <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-500">
-              <FaRocket className="text-emerald-500" />
-              <span>Available for new opportunities</span>
+            <div className="flex items-center space-x-2 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full w-fit">
+              <FaRocket className="animate-bounce text-xs" />
+              <span>Available for new projects & roles</span>
             </div>
           </div>
           
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
-              Quick Links
+          {/* Quick Links Column */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider font-heading">
+              Quick Navigation
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a 
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium"
+                    className="text-slate-400 hover:text-cyan-400 transition-all duration-300 text-sm font-medium hover:pl-1"
                   >
                     {link.label}
                   </a>
@@ -96,56 +99,49 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Connect */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+          {/* Connect Column */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider font-heading">
               Let's Connect
             </h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex gap-2">
               {socialLinks.map((social) => (
                 <a 
                   key={social.label}
                   href={social.href}
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className={`w-10 h-10 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-400 ${social.hoverColor} border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transform hover:scale-110 transition-all duration-200`}
+                  className={`w-10 h-10 bg-white/5 backdrop-blur-md rounded-xl flex items-center justify-center text-slate-400 border border-white/5 transition-all duration-300 ${social.glowClass}`}
                   aria-label={social.label}
                 >
                   {social.icon}
                 </a>
               ))}
             </div>
-            <div className="mt-6">
+            <div className="pt-2">
               <a 
                 href="mailto:yasserzaher03@gmail.com"
-                className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm font-medium"
+                className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 transform hover:scale-[1.03] shadow-[0_0_15px_rgba(6,182,212,0.15)]"
               >
-                <FaEnvelope />
+                <FaEnvelope className="text-xs" />
                 <span>Get in Touch</span>
               </a>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-200/50 dark:border-gray-700/50 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-600 dark:text-gray-400 text-sm">
-              <p>&copy; {currentYear} Yaser Shoshaa. All rights reserved.</p>
-            </div>
-            
-
-          </div>
+        {/* Sub-footer Copyright */}
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-slate-500">
+          <p>&copy; {currentYear} Yaser Shoshaa. All rights reserved.</p>
           
-          <div className="mt-4 text-center">
-            <p className="text-xs text-gray-500 dark:text-gray-500 flex items-center justify-center space-x-1">
-              <FaCode className="text-teal-500" />
-              <span>Designed & developed with passion for innovation</span>
-            </p>
-          </div>
+          <p className="flex items-center space-x-1.5 font-semibold text-slate-600">
+            <FaCode className="text-cyan-500" />
+            <span>Designed & developed with passion for innovation</span>
+          </p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

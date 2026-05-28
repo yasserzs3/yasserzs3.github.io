@@ -30,7 +30,7 @@ const projectCategories = [
       },
       {
         id: 3,
-        title: 'Multi-Model Detection for Person Collecting Waste',
+        title: 'Multi-Model Detection for Waste Collection',
         description: 'Computer vision system using multiple detection models to identify people collecting waste. Practical application of AI for environmental monitoring.',
         image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
         technologies: ['Python', 'Computer Vision', 'Object Detection', 'Multi-Model'],
@@ -122,7 +122,7 @@ const projectCategories = [
     projects: [
       {
         id: 10,
-        title: 'MongoDB Statefulset with Microsoft Azure',
+        title: 'MongoDB Statefulset on Azure',
         description: 'Implementation of MongoDB StatefulSet deployment on Microsoft Azure cloud platform. Includes Kubernetes configuration and cloud infrastructure setup.',
         image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
         technologies: ['Python', 'MongoDB', 'Azure', 'Kubernetes', 'Cloud'],
@@ -138,7 +138,7 @@ const projectCategories = [
     projects: [
       {
         id: 11,
-        title: 'Snake Game',
+        title: 'Classic Snake Game',
         description: 'Classic Snake game implemented in Python. A fun project showcasing game development skills and Python programming fundamentals.',
         image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80',
         technologies: ['Python', 'Game Development', 'Programming'],
@@ -153,94 +153,109 @@ const projectCategories = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="pb-16 md:pb-24 pt-8 md:pt-12 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-gray-900 dark:to-slate-900">
+    <section id="projects" className="pb-24 pt-16 relative overflow-hidden bg-black">
+      {/* Background Purple/Violet Mesh Layer */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+        <div className="absolute top-[20%] right-[-15%] w-[45vw] h-[45vw] rounded-full bg-gradient-to-br from-violet-500/20 to-purple-500/25 filter blur-[120px] animate-mesh-1"></div>
+        <div className="absolute bottom-[20%] left-[-15%] w-[40vw] h-[40vw] rounded-full bg-gradient-to-bl from-fuchsia-500/20 to-violet-600/25 filter blur-[100px] animate-mesh-2"></div>
+      </div>
+
       <div className="container">
+        {/* Title Block */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.8 }}
+          className="mb-20 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent dark:from-teal-400 dark:to-emerald-400">
-            Featured Projects
+          <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tight font-heading">
+            <span className="gradient-text-purple drop-shadow-[0_0_30px_rgba(139,92,246,0.15)]">
+              Featured Projects
+            </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-600 to-emerald-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A showcase of innovative solutions spanning AI/ML, full-stack development, and cloud infrastructure. 
+          <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-violet-600 mx-auto rounded-full mb-6 shadow-[0_0_15px_rgba(139,92,246,0.5)]"></div>
+          <p className="text-slate-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+            A showcase of innovative solutions spanning AI/ML, data pipeline engineering, and cloud infrastructure. 
             Each project represents a unique challenge solved with modern technology.
           </p>
         </motion.div>
         
-        {projectCategories.map((category, categoryIndex) => (
+        {/* Categories Check-in */}
+        {projectCategories.map((category, catIdx) => (
           <motion.div
             key={category.title}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-            className="mb-16"
+            transition={{ duration: 0.8, delay: catIdx * 0.05 }}
+            className="mb-20"
           >
-            <h3 className="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-200 flex items-center">
-              <span className="w-8 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mr-4"></span>
-              {category.title}
+            {/* Category Header */}
+            <h3 className="text-2xl font-black mb-8 text-white flex items-center font-heading">
+              <span className="w-8 h-1 bg-gradient-to-r from-purple-500 to-violet-500 mr-4 rounded-full shadow-[0_0_10px_rgba(139,92,246,0.5)]"></span>
+              <span>{category.title}</span>
             </h3>
             
+            {/* Projects Grid */}
             <div className="grid lg:grid-cols-2 gap-8">
-              {category.projects.map((project, projectIndex) => (
+              {category.projects.map((project, projIdx) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: projectIndex * 0.1 }}
-                  className={`group relative bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-white/20 dark:border-gray-700/20 hover:shadow-2xl transition-all duration-300 ${
+                  transition={{ duration: 0.7, delay: projIdx * 0.05 }}
+                  className={`group glass-purple shadow-xl overflow-hidden flex flex-col justify-between ${
                     project.featured ? 'lg:col-span-2' : ''
                   }`}
                 >
                   {project.featured && (
-                    <div className="absolute top-4 left-4 z-10">
-                      <span className="bg-gradient-to-r from-teal-500 to-emerald-600 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
-                        <FaStar className="text-xs" />
-                        <span>Featured</span>
+                    <div className="absolute top-4 left-4 z-20">
+                      <span className="bg-gradient-to-r from-purple-500 to-violet-600 text-white px-3.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center space-x-1.5 shadow-[0_0_15px_rgba(139,92,246,0.4)]">
+                        <FaStar className="text-amber-300 animate-spin-slow" />
+                        <span>Featured Project</span>
                       </span>
                     </div>
                   )}
                   
-                  <div className={`${project.featured ? 'md:flex' : ''}`}>
-                    <div className={`${project.featured ? 'md:w-1/2' : ''} h-64 overflow-hidden relative`}>
+                  <div className={`flex flex-col h-full ${project.featured ? 'md:flex-row' : ''}`}>
+                    {/* Image Block */}
+                    <div className={`relative overflow-hidden ${project.featured ? 'md:w-1/2 h-72 md:h-auto min-h-[250px]' : 'h-60'}`}>
                       <img 
                         src={project.image} 
                         alt={project.title} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     </div>
                     
-                    <div className={`p-6 ${project.featured ? 'md:w-1/2 flex flex-col justify-between' : ''}`}>
-                      <div>
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-xl font-bold text-gray-800 dark:text-gray-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                    {/* Content Block */}
+                    <div className={`p-8 flex flex-col justify-between flex-grow ${project.featured ? 'md:w-1/2' : ''}`}>
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between">
+                          <h4 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors font-heading">
                             {project.title}
                           </h4>
-                          <div className="flex items-center space-x-3 text-gray-500 dark:text-gray-400">
-                            {project.techIcons.map((icon, iconIndex) => (
-                              <span key={iconIndex} className="text-lg">
+                          <div className="flex items-center space-x-2.5 text-slate-400">
+                            {project.techIcons.map((icon, i) => (
+                              <span key={i} className="text-lg hover:text-white transition-colors">
                                 {icon}
                               </span>
                             ))}
                           </div>
                         </div>
                         
-                        <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        <p className="text-slate-300 text-sm leading-relaxed">
                           {project.description}
                         </p>
                         
-                        <div className="flex flex-wrap gap-2 mb-6">
+                        {/* Badges */}
+                        <div className="flex flex-wrap gap-2 pt-2">
                           {project.technologies.map(tech => (
                             <span 
                               key={tech} 
-                              className="px-3 py-1 bg-teal-100/70 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 text-xs rounded-full font-medium"
+                              className="px-2.5 py-1 bg-purple-500/10 border border-purple-500/15 text-purple-300 rounded-lg text-xs font-semibold tracking-wide"
                             >
                               {tech}
                             </span>
@@ -248,28 +263,28 @@ const Projects = () => {
                         </div>
                       </div>
                       
-                      <div className="flex items-center justify-between">
+                      {/* Action Links & Stats */}
+                      <div className="flex items-center justify-between border-t border-white/5 pt-6 mt-6">
                         <div className="flex gap-4">
                           <a 
                             href={project.github} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium"
+                            className="flex items-center gap-2 text-slate-300 hover:text-purple-400 transition-colors text-sm font-bold tracking-wide"
                           >
                             <FaGithub className="text-lg" />
                             <span>Code</span>
                           </a>
-                          
-
                         </div>
                         
-                        <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
-                          <div className="flex items-center space-x-1">
-                            <FaStar className="text-yellow-500" />
+                        {/* Project Stars / Forks */}
+                        <div className="flex items-center space-x-4 text-xs text-slate-500">
+                          <div className="flex items-center space-x-1 hover:text-amber-400 transition-colors">
+                            <FaStar className="text-amber-500" />
                             <span>{project.stats.stars}</span>
                           </div>
-                          <div className="flex items-center space-x-1">
-                            <FaCode />
+                          <div className="flex items-center space-x-1 hover:text-purple-400 transition-colors">
+                            <FaCode className="text-purple-500" />
                             <span>{project.stats.forks}</span>
                           </div>
                         </div>
@@ -282,22 +297,23 @@ const Projects = () => {
           </motion.div>
         ))}
         
+        {/* GitHub Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.8 }}
           className="text-center"
         >
           <a 
             href="https://github.com/yasserzs3" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 font-medium"
+            className="btn-purple px-8 py-4 rounded-xl font-bold flex items-center space-x-2 text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(139,92,246,0.3)] mx-auto w-fit"
           >
             <FaGithub className="text-lg" />
             <span>View All Projects on GitHub</span>
-            <FaExternalLinkAlt className="text-sm" />
+            <FaExternalLinkAlt className="text-xs" />
           </a>
         </motion.div>
       </div>
@@ -305,4 +321,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;
