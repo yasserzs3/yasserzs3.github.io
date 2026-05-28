@@ -1,9 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="12" fill="#3B82F6" />
-  <path d="M32 16V48" stroke="white" stroke-width="4" stroke-linecap="round" />
-  <path d="M20 26V38" stroke="white" stroke-width="4" stroke-linecap="round" />
-  <path d="M44 26V38" stroke="white" stroke-width="4" stroke-linecap="round" />
-  <path d="M16 32H48" stroke="white" stroke-width="4" stroke-linecap="round" />
-  <path d="M24 20H40" stroke="white" stroke-width="4" stroke-linecap="round" />
-  <path d="M24 44H40" stroke="white" stroke-width="4" stroke-linecap="round" />
-</svg> 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" width="32" height="32">
+  <defs>
+    <linearGradient id="crest-gradient-small" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="50%" stop-color="#D946EF" />
+      <stop offset="100%" stop-color="#FFE600" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes drawInSmall {
+      from { stroke-dashoffset: 800; }
+      to { stroke-dashoffset: 0; }
+    }
+    .crest-outline {
+      stroke: url(#crest-gradient-small);
+      stroke-width: 2.2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      animation: drawInSmall 2s ease-out forwards;
+    }
+    .drift-path {
+      stroke: url(#crest-gradient-small);
+      stroke-width: 4.5px;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      transition: transform 0.3s ease;
+    }
+    .drift-path-1 { animation: drawInSmall 1.8s ease forwards 0.1s; }
+    .drift-path-2 { animation: drawInSmall 1.6s ease forwards 0.2s; }
+    .drift-path-3 { animation: drawInSmall 1.4s ease forwards 0.3s; }
+    
+    .blueprint-circle { stroke: #6E6D99; stroke-width: 0.5px; opacity: 0.15; stroke-dasharray: 1 3; }
+    .blueprint-axis { stroke: #6E6D99; stroke-width: 0.5px; opacity: 0.2; }
+
+    svg:hover .drift-path-1 { transform: translate(-3px, -2px); }
+    svg:hover .drift-path-3 { transform: translate(2px, 2px); }
+  </style>
+
+  <!-- Background Blueprint Guides -->
+  <circle cx="30" cy="170" r="100" class="blueprint-circle" />
+  <circle cx="30" cy="170" r="140" class="blueprint-circle" />
+  <line x1="10" y1="170" x2="190" y2="170" class="blueprint-axis" />
+  <line x1="30" y1="10" x2="30" y2="190" class="blueprint-axis" />
+
+  <!-- Outer Asymmetric Crest -->
+  <path d="M 30,170 C 45,120 90,55 170,30 C 172,30 172,32 170,35 C 150,65 140,90 148,105 C 149,107 146,110 142,109 C 135,107 132,112 135,118 C 142,122 153,124 158,118 C 125,150 80,172 30,170 Z" 
+        class="crest-outline" />
+
+  <!-- Internal Fanning paths -->
+  <path d="M 32,168 C 50,123 92,63 166,34" class="drift-path drift-path-1" />
+  <path d="M 35,166 C 60,128 100,75 158,45" class="drift-path drift-path-2" />
+  <path d="M 38,164 C 70,133 110,90 146,65" class="drift-path drift-path-3" />
+</svg>
